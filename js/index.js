@@ -12,8 +12,9 @@ const buttons = document.querySelectorAll('.btn')
 const form = document.querySelector('.form')
 const formInput = document.querySelectorAll('input')
 const destImg = document.querySelector('.img-destination')
+const divDestination = document.querySelectorAll('.destination')
 
-// console.log(introP)
+console.log(divDestination)
 // Nav mouseover
 navLinks.forEach(link => link.addEventListener('mouseover', event => {
     // console.log(event.target)
@@ -36,7 +37,12 @@ images.forEach(image => image.addEventListener('wheel', event => event.target.st
 // })
 images.forEach(image => image.addEventListener('drag', event => event.target.src = 'https://i.ytimg.com/vi/MXIhkn5QRNE/hqdefault.jpg'))
 destImg.addEventListener('dblclick', image => event.target.style.borderRadius = '100px')
-buttons.forEach(button => button.addEventListener('click', event => form.classList.toggle('hidden')))
+buttons.forEach(button => button.addEventListener('click', event => {
+    form.classList.toggle('hidden')
+    event.stopImmediatePropagation()
+}))
+divDestination.forEach(button => button.addEventListener('click', event => event.target.style.background = 'purple'))
+
 formInput.forEach(input => input.addEventListener('focus', event => event.target.style.background = 'pink'))
 formInput.forEach(input => input.addEventListener('blur', event => event.target.style.background = ''))
 formInput.forEach(input => input.addEventListener('keydown', event => event.target.style.color = 'green'))
