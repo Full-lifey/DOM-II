@@ -211,6 +211,7 @@ img {
   }
 }
 .main-navigation .nav-container .nav a {
+  padding: 10px;
   font-size: 1.6rem;
   color: #212529;
   text-decoration: none;
@@ -349,4 +350,11 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.home .form {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.home .hidden {
+  display: none;
 }
